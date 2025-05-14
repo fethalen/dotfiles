@@ -1,0 +1,4 @@
+# Load ~/.bashrc, if this is a login shell.
+if [[ $- == *i* ]]; then
+  source ~/.bashrc
+fi

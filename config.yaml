@@ -1,0 +1,42 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  ignoreempty: false
+  keepdot: false
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  f_inputrc:
+    src: inputrc
+    dst: ~/.inputrc
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+  f_profile:
+    src: profile
+    dst: ~/.profile
+  f_bash_profile:
+    src: bash_profile
+    dst: ~/.bash_profile
+  f_vimrc:
+    src: vimrc
+    dst: ~/.vimrc
+  f_rprofile:
+    src: Rprofile
+    dst: ~/.Rprofile
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+profiles:
+  CCNB009:
+    dotfiles:
+    - f_inputrc
+    - f_bashrc
+    - f_profile
+    - f_bash_profile
+    - f_vimrc
+    - f_rprofile
+    - f_xresources

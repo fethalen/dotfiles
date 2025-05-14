@@ -1,0 +1,74 @@
+! General settings
+! ----------------
+
+! Set the TERM environmental variable.
+XTerm*termName: xterm-256color
+
+! Use UTF-8.
+XTerm*locale: true
+
+! Turn bell off.
+XTerm*visualBell: false
+
+! Fix the 'Alt' key.
+XTerm*metaSendsEscape: true
+
+! Use the X11 clipboard for copy and paste.
+Xterm*selectToClipboard: true
+
+! Larger buffer history.
+XTerm*saveLines: 8192
+
+! No scrollbar.
+XTerm*scrollBar: false
+
+! Set font.
+XTerm*faceName: Iosevka Term:antialias=true
+XTerm*italicFont: Iosevka Term:italic:autohint=true
+XTerm*faceSize: 14
+
+! Remove the black border.
+XTerm*borderWidth: 0
+
+! Use a bigger window size.
+XTerm*geometry: 132x34
+
+! Enable blinking cursor.
+XTerm*cursorBlink: true
+
+! Selections are copied to the standard clipboard.
+XTerm*disallowedWindowOps: 20,21,SetXprop
+
+! Ample color scheme
+
+XTerm*cursorColor: rgb:f5/7e/00
+XTerm*foreground:  rgb:bd/bd/b3
+#ifdef background_opacity
+XTerm*background:  [background_opacity]rgb:21/21/21
+#else
+XTerm*background:  reg:21/21/21
+
+! black
+XTerm*color0:      rgb:26/26/26
+XTerm*color8:      rgb:30/30/30
+! red
+XTerm*color1:      rgb:9d/25/12
+XTerm*color9:      rgb:cd/55/42
+! green
+XTerm*color2:      rgb:05/7f/40
+XTerm*color10:     rgb:6a/af/50
+! yellow
+XTerm*color3:      rgb:ba/ba/36
+XTerm*color11:     rgb:ff/fe/0a
+! blue
+XTerm*color4:      rgb:10/28/43
+XTerm*color12:     rgb:51/80/b3
+! magenta
+XTerm*color5:      rgb:ab/75/c3
+XTerm*color13:     rgb:98/76/54
+! cyan
+XTerm*color6:      rgb:52/8f/d1
+XTerm*color14:     rgb:68/a5/e9
+! white
+XTerm*color7:      rgb:45/45/45
+XTerm*color15:     rgb:65/65/65

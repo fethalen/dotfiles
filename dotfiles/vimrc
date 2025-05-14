@@ -1,0 +1,188 @@
+" ~/.vimrc: texteditor configuration.
+
+" Plugins
+" -------
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-fugitive'
+Plug 'HenryNewcomer/vim-theme-papaya'
+Plug 'rakr/vim-one'
+Plug 'AlessandroYorba/Alduin'
+Plug 'AlessandroYorba/Despacio'
+Plug 'AlessandroYorba/Breve'
+Plug 'AlessandroYorba/Arcadia'
+Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-two-firewatch'
+Plug 'jnurmine/Zenburn'
+Plug 'w0rp/ale'
+Plug 'jpalardy/vim-slime'
+Plug 'maralla/completor.vim'
+Plug 'junegunn/rainbow_parentheses.vim', { 'for': 'racket' }
+Plug 'wlangstroth/vim-racket', { 'for': 'racket'}
+Plug 'jalvesaq/Nvim-R', { 'for': 'r' }
+Plug 'jimhester/lintr', { 'for': 'r' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'vim-python/python-syntax', { 'for': 'python' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
+" Initialize plugin system
+call plug#end()
+
+" Enable all Python syntax highlightning features.
+let g:python_highlight_all = 1
+
+" Code completion when writing in Python.
+let g:completor_python_binary = "/usr/local/bin/python"
+let g:completor_clang_binary = "/usr/bin/clang"
+
+" Use lintr for static code analysis for R.
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_r_checkers = 0
+
+" Use vimtex for better LaTeX support.
+let g:vimtex_compiler_latexmk = {"callback" : 0}
+
+" Send text to a REPL by typing C-c C-c.
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name" : "default", "target_pane" : "1"}
+let g:slime_dont_ask_default = 1
+let g:slime_python_ipython = 1
+
+" Don't fold headings when editing Markdown files.
+let g:vim_markdown_folding_disabled = 1
+
+" General settings
+" ----------------
+set nocompatible            " 'compatible' is not set.
+set encoding=utf-8          " utf-8 encoding.
+set visualbell              " Visual bell.
+set hidden                  " Allow hidden buffers.
+set history=8192            " Increase command history size.
+set undolevels=8192         " Increase number of changes that can be undone.
+set autoread                " Read a file again if any changes have been made.
+set mouse=a                 " Enable mouse usage in terminal.
+set exrc                    " Source .vimrc if present in working directory.
+set secure                  " Restrict which commands can be sourced directly.
+set foldmethod=marker       " Enable folding triggered by markers.
+" Disable backup and swap files.
+set nobackup
+set nowritebackup
+set noswapfile
+" Make backspace work like most other applications.
+set backspace=indent,eol,start
+" Command line completion
+if has("wildmenu")
+  " Show file options above the command line.
+  set wildmenu
+  set wildmode=longest:list,full
+endif
+" Remove trailing whitespace on save.
+au BufWritePre * silent g/\s\+$/s///
+
+set spelllang=en_us         " Use English for spell checking.
+set complete+=kspell        " Toggle word completion.
+" Eliminate delay when hitting the Esc key.
+set timeoutlen=1000 ttimeoutlen=0
+
+" Tabs and indents
+" ----------------
+set smarttab                " Better backspace and tab functionality.
+set tabstop=4               " Tab counts for 4 columns.
+set shiftwidth=4            " Columns indented with re-indent operations.
+set softtabstop=4           " Number of column in insert mode.
+set shiftround              " Round indent to multiple of 'shiftwidth'.
+set expandtab               " Replace tabs with spaces.
+set autoindent              " Reuse indentation from previous line.
+set smartindent             " Smart indenting when starting a new line.
+
+" Wrapping
+" --------
+set textwidth=79            " Set text width.
+set linebreak               " Break lines when text width is reached.
+set wrap                    " Wrap lines.
+set nolist                  " List disables line break.
+
+" Search
+" ------
+set ignorecase              " Case insensitive search.
+set smartcase               " Ignore case if lowercase, else case-sensitive.
+set incsearch               " Highlight found text and repeat search over file.
+set hlsearch                " Highlight all search pattern matches.
+
+" Appearance
+" ----------
+set shortmess+=I            " hide the startup message
+set number                  " display line numbers
+set guitablabel=%M\ %t      " only display file name in tabs
+set showmatch               " jump to opening bracket when closing a bracket
+set lazyredraw              " don't update the display while executing macros
+set report=0                " report number of lines changed
+set laststatus=2            " show status line
+set ruler                   " show current position
+set showmode                " display current mode
+syntax on                   " turn syntax highlightning on
+
+if &term =~ "256color"
+  " Disable Background Color Erase (BCE) so that color schemes render
+  " properly when inside 256-color tmux or GNU screen.
+  set t_ut=
+  set t_Co=256 " enable 256 colors
+endif
+
+" Enable True Colour if both this terminal and Vim supports it.
+if $COLORTERM == "truecolor"
+  if has("termguicolors")
+    set termguicolors
+  endif
+endif
+
+try
+  colorscheme papaya
+catch
+endtry
+
+" GVim settings
+" -------------
+if has("gui_running")
+  set antialias     " Anti-aliasing on screen text.
+  set guioptions-=m " Remove menu bar.
+  set guioptions-=T " Remove toolbar.
+  set guioptions-=r " Remove right-hand scroll bar.
+  set guioptions-=L " Remove left-hand scroll bar.
+  " Set window size.
+  set columns=132
+  set lines=43
+  " Set prefered font if available.
+  if has("gui_gtk2") " Linux
+    set guifont=IBM\ Plex\ Mono\ 14,DejaVu\ Sans\ Mono\ 12
+  elseif has("gui_photon") " Windows
+    set guifont=IBM\ Plex\ Mono:h14,Courier\ New:h12
+  else " macOS
+    set guifont=IBM\ Plex\ Mono\ Regular:h13
+  endif
+endif
+
+" Bindings
+" --------
+
+" Use space as leader.
+nnoremap <SPACE> <Nop>
+map <SPACE> <leader>" Mappings
+let maplocalleader = "\<Space>"
+
+nnoremap <F4> :make!<cr>
+
+" Filetype Settings
+" -----------------
+autocmd BufRead,BufNewFile *.Rprofile setlocal filetype=r
+autocmd BufRead,BufNewFile *.md setlocal spell filetype=markdown
+autocmd BufRead,BufNewFile .bcrc setlocal filetype=bc
+autocmd BufReadPost *.rkt,*.rktl set filetype=racket
+autocmd FileType racket RainbowParentheses setlocal lisp autoindent
+autocmd FileType sh setlocal ts=2 sw=2 sts=2
+autocmd FileType tex setlocal ts=2 sw=2 sts=2 spell
+autocmd FileType vim setlocal ts=2 sw=2 sts=2
+autocmd FileType bash setlocal ts=2 sw=2 sts=2
+autocmd FileType cpp setlocal ts=2 sw=2 sts=2
+

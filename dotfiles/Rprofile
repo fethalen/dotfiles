@@ -1,0 +1,2 @@
+# Don't ask for my CRAN mirror
+options("repos" = c(CRAN = "https://stat.ethz.ch/CRAN/"))

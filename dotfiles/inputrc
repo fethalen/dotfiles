@@ -1,0 +1,51 @@
+# ~/.inputrc: readline start-up file
+
+# Turn bell off.
+set bell-style none
+
+# Display completions using different colors for their file types.
+set colored-stats on
+
+# Don't expand '~' into the absolute path to our home directory when doing word completion.
+set expand-tilde off
+
+# Disable delay when hitting the Esc key.
+set keyseq-timeout 0
+
+# on menu-complete, first display the common prefix, then cycle through the
+# options when hitting TAB.
+set menu-complete-display-prefix on
+
+# Case insensitive file and command completion.
+set completion-ignore-case on
+
+# Show conflicting completions directly.
+set show-all-if-ambiguous on
+
+# Briefly move the cursor to an opening parenthesis when closing
+# parenthesis is inserted.
+set blink-matching-paren on
+
+# Set vi-style keybindings as the default input method.
+set editing-mode vi
+
+$if mode=vi
+  # Show current mode in the prompt.
+  set show-mode-in-prompt on
+  set vi-ins-mode-string \1\e[94;1m\2(ins) \1\e[0m\2
+  set vi-cmd-mode-string \1\e[95;1m\2(cmd) \1\e[0m\2
+
+  # Keys for command mode.
+  set keymap vi-command
+  Control-l: clear-screen
+
+  # Keys for insert mode.
+  set keymap vi-insert
+  Control-l: clear-screen
+$endif
+
+# Use colors from the $LS_COLORS variable to display items in the
+# autocompletion with appropriate colors.
+$if Bash
+  set colored-stats on
+$endif
