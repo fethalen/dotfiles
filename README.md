@@ -1,31 +1,16 @@
 # Felicia's dotfiles 🔧
 
-This repository contains my personal configuration files. 
-They provide settings for the following programs:
+This repository contains my personal configuration files.
 
-* [Bash](http://tiswww.case.edu/php/chet/bash/bashtop.html "Bash")
-* [bc](https://www.gnu.org/software/bc/)
-* [R](https://www.r-project.org/ "The R Project")
-* [Readline](https://tiswww.case.edu/php/chet/readline/rltop.html)
-* [tmux](https://tmux.github.io/ "tmux")
-* [Vim](http://www.vim.org/ "Vim")
-* [XTerm](http://invisible-island.net/xterm/)
+## 📦 Installation
 
-### XTerm
+...
 
-My XTerm configuration is stored in `~/.Xresources`. Resources are read from
-the file `~/.Xresources` when you login, but if you wish to force them to be
-reloaded you run the command:
+## 🔄 Reloading
 
-```bash
-xrdb -merge ~/.Xresources
-```
-
-Make XTerm the default terminal application:
-
-```bash
-gsettings set org.gnome.desktop.default-applications.terminal exec 'xterm'
-```
+If you made changes to one of your dotfiles, you may want to reread that file without
+having to restart the affected software. Down below are instruction for how to reload dotfile
+configurations without requiring a restart.
 
 ### Bash
 
@@ -43,10 +28,18 @@ Reload `.inputrc` by typing <kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Ctrl</kbd> +
 tmux settings are stored in `.tmux.conf`. To reload your tmux settings, type
 `tmux source-file ~/.tmux.conf` into your command line.
 
+### XTerm
 
-## 📦 Installation
+Resources are read from the file `~/.Xresources` upon login. To force 
+the X resources file to be reloaded, run `xrdb -merge ~/.Xresources`.
 
-...
+To make XTerm the default terminal application, enter
+
+```bash
+gsettings set org.gnome.desktop.default-applications.terminal exec 'xterm'
+```
+
+into your terminal.
 
 ## 📝 License
 
