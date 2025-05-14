@@ -1,0 +1,14 @@
+# Define mathematical constants.
+p = (4 * a(1));
+e = e(1);
+
+# Factorial function.
+define f (x) {
+  if (x <= 1) return (1);
+  return (f(x-1) * x);
+}
+
+# Tangent function.
+define t (x) {
+  return (s(x) / c(x));
+}

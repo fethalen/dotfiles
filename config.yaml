@@ -30,6 +30,12 @@ dotfiles:
   f_xresources:
     src: Xresources
     dst: ~/.Xresources
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
+  f_bcrc:
+    src: bcrc
+    dst: ~/.bcrc
 profiles:
   CCNB009:
     dotfiles:
@@ -40,3 +46,5 @@ profiles:
     - f_vimrc
     - f_rprofile
     - f_xresources
+    - f_tmux.conf
+    - f_bcrc
