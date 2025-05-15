@@ -2,6 +2,13 @@
 
 This repository contains my personal configuration files.
 
+## 🗺️ Map
+
+- [<code>📦 Installation</code>](#-installation)
+- [<code>🔄 Reloading</code>](#-reloading)
+- [<code>📝 License</code>](#-license)
+
+
 ## 📦 Installation
 
 I use [Dotdrop](https://github.com/deadc0de6/dotdrop) to manage my dotfiles.
