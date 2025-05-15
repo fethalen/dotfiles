@@ -36,8 +36,11 @@ dotfiles:
   f_bcrc:
     src: bcrc
     dst: ~/.bcrc
+  f_editrc:
+    src: editrc
+    dst: ~/.editrc
 profiles:
-  CCNB009:
+  work-laptop:
     dotfiles:
     - f_inputrc
     - f_bashrc
@@ -48,3 +51,4 @@ profiles:
     - f_xresources
     - f_tmux.conf
     - f_bcrc
+    - f_editrc
