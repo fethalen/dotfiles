@@ -11,25 +11,32 @@ This repository contains my personal configuration files.
 
 ## 📦 Installation
 
+Start of by cloning and moving into this repository:
+
+``` shell
+git clone https://github.com/fethalen/dotfiles.git
+cd dotfiles
+```
+
 I use [Dotdrop](https://github.com/deadc0de6/dotdrop) to manage my dotfiles.
 See the
 [installation instructions](https://dotdrop.readthedocs.io/en/latest/installation/)
 on how to install Dotdrop. One way to install Dotdrop is via pip:
 
-```
+``` shell
 pip install dotdrop
 ```
 
 To install (i.e., symlink) dotfiles to your system:
 
-```
+``` shell
 dotdrop install
 ```
 
 To install a specific profile (e.g., the profile `laptop` in the following
 case), use the flag `-p` or `--profile`:
 
-```
+``` shell
 dotdrop install -p laptop
 ```
 
