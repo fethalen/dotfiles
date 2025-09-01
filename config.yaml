@@ -52,3 +52,15 @@ profiles:
     - f_tmux.conf
     - f_bcrc
     - f_editrc
+  hpc-euler:
+    dotfiles:
+    - f_inputrc
+    - f_bashrc
+    - f_profile
+    - f_bash_profile
+    - f_vimrc
+    - f_rprofile
+    - f_xresources
+    - f_tmux.conf
+    - f_bcrc
+    - f_editrc
