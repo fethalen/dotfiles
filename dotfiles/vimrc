@@ -5,8 +5,16 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'rose-pine/vim'
 Plug 'tpope/vim-fugitive'
+Plug 'HenryNewcomer/vim-theme-papaya'
+Plug 'rakr/vim-one'
+Plug 'AlessandroYorba/Alduin'
+Plug 'AlessandroYorba/Despacio'
+Plug 'AlessandroYorba/Breve'
+Plug 'AlessandroYorba/Arcadia'
+Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-two-firewatch'
+Plug 'jnurmine/Zenburn'
 Plug 'w0rp/ale'
 Plug 'jpalardy/vim-slime'
 Plug 'maralla/completor.vim'
@@ -105,7 +113,7 @@ set hlsearch                " Highlight all search pattern matches.
 " Appearance
 " ----------
 set shortmess+=I            " hide the startup message
-" set number                  " display line numbers
+set number                  " display line numbers
 set guitablabel=%M\ %t      " only display file name in tabs
 set showmatch               " jump to opening bracket when closing a bracket
 set lazyredraw              " don't update the display while executing macros
@@ -130,7 +138,7 @@ if $COLORTERM == "truecolor"
 endif
 
 try
-  colorscheme rosepine_dawn
+  colorscheme papaya
 catch
 endtry
 

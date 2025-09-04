@@ -39,6 +39,9 @@ dotfiles:
   f_editrc:
     src: editrc
     dst: ~/.editrc
+  f_init.lua:
+    src: config/nvim/init.lua
+    dst: ~/.config/nvim/init.lua
 profiles:
   work-laptop:
     dotfiles:
@@ -52,6 +55,7 @@ profiles:
     - f_tmux.conf
     - f_bcrc
     - f_editrc
+    - f_init.lua
   hpc-euler:
     dotfiles:
     - f_inputrc
